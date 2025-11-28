@@ -15,11 +15,47 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-auto-rows: 75%;
+    grid-auto-rows: 75vh;
 }
 
 #wrapper > header {
     grid-column: 1 / -1;
+    /*background-image: url('../img/arc.png');
+    background-position: -50% 100%;
+    background-size: cover;*/
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.header {
+    grid-column: 1 / -1;
+    height: 100%;
+    background-color: var(--mild-creme);
+    justify-content: space-evenly;
+}
+
+nav {
+    grid-column: 1 / -1;
+    grid-row: 2 / span 1;
+    width: 20%;
+    height: 15%;
+    align-self: start;
+    justify-self: center;
+    justify-content: space-between;
+
+    background-color: var(--warm-brown);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+nav > a {
+    height: 50%;
+    width: 50%;
+    flex-basis: 50%;
+    align-self: center;
+    justify-content: center;
 }
 
 #wrapper > footer {
@@ -31,17 +67,83 @@ body {
     background-color: var(--soft-green);
 }
 
-#normal-flow {
+section > div {
     position: absolute;
-    width: 100vw;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+section > div > div {
+    width: 100%;
+    height: 100%;
+    transform: translate(50%, 0);
+}
+
+#overlay-flow {
+    position: absolute;
+    width: 100%;
     height: 100vh;
     z-index: -1;
 }
 
-#normal-flow > div {
-    width: 100vw;
+#overlay-flow > div {
+    width: 100%;
     height: 100%;
+    background-size: cover;
+}
+
+#image-1 {
     background-image: url('../img/Image_created_with_a_mobile_phone.png');
+    width: 100%;
+    height: 100%;
+}
+
+.arc {
+    grid-row: 2 / span 2;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url('../img/arcCreme.png');
+    background-size: 140%;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    /* filter: hue-rotate(29deg) saturate(.1) brightness(1.5); */
+}
+
+.arc-inverse {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/arcInverse.png');
+    background-size: contain;
+    background-position: 50% 0;
+}
+
+.arc > img {
+    width: 100%;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.ver-div {
+    display: inline;
+    height: 90%;
+    width: 1px;
+    background-color: #816447;
+    align-self: center;
 }
 
 /*div {
