@@ -15,7 +15,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-auto-rows: 75vh;
+    grid-auto-rows: 75vh 50vh;
 }
 
 #wrapper > header {
@@ -25,7 +25,7 @@ body {
     background-size: cover;*/
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
     align-items: center;
 }
 
@@ -51,11 +51,17 @@ nav {
 }
 
 nav > a {
+    margin: 10px;
     height: 50%;
     width: 50%;
     flex-basis: 50%;
     align-self: center;
     justify-content: center;
+}
+
+nav > a > img {
+    width: 100%;
+    aspect-ratio: 1/1;
 }
 
 #wrapper > footer {
@@ -75,9 +81,9 @@ section > div {
 }
 
 section > div > div {
-    width: 100%;
+    width: 50%;
     height: 100%;
-    transform: translate(50%, 0);
+    /* transform: translate(50%, 0); */
 }
 
 #overlay-flow {
@@ -106,22 +112,51 @@ section > div > div {
     height: 100%;
     overflow: hidden;
     background-image: url('../img/arcCreme.png');
-    background-size: 140%;
+    background-size: 100% 100%;
     background-position: 50% 0;
     background-repeat: no-repeat;
+    pointer-events: none;
+    touch-action: none;
     /* filter: hue-rotate(29deg) saturate(.1) brightness(1.5); */
 }
 
 .arc-inverse {
-    width: 100%;
+    display: block;
+    width: 200%;
     height: 100%;
     background-image: url('../img/arcInverse.png');
-    background-size: contain;
-    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-clip: content-box;
 }
 
 .arc > img {
     width: 100%;
+}
+
+.section-top {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(10%, 1fr));
+    grid-template-rows: repeat(3, minmax(10%, 50%));
+}
+
+.section-top > * {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+}
+
+.section-top > h1 {
+    grid-column: 2/2;
+    grid-row: 3/3;
+    align-self: center;
+    text-align: center;
+}
+
+.section-bottom {
+    width: 90%;
+    height: 50%;
+    background-color: var(--mild-creme);
+    border-radius: .1%;
+    padding: 5%;
 }
 
 .flex-row {
@@ -144,6 +179,17 @@ section > div > div {
     width: 1px;
     background-color: #816447;
     align-self: center;
+}
+
+.left {
+    float: left;
+}
+.left .arc-inverse {
+    transform: translate(-50%, 0);
+}
+
+.right {
+    float: right;
 }
 
 /*div {
