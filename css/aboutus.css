@@ -33,15 +33,32 @@
     align-self: center;
 }
 
-.flex-left {
-    align-self: flex-start;
-}
 .left .arc-inverse {
     transform: translate(-50%, 0);
 }
 
-.flex-right {
+.flex-right-sec {
     align-self: flex-end;
+}
+
+.flex-left-sec {
+    align-self: flex-start;
+}
+
+.flex-right {
+    justify-self: flex-end;
+}
+
+.flex-left {
+    justify-self: flex-start;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }
 
 /*-----------------------------*/
@@ -55,7 +72,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 75vh auto 10%;
+    grid-template-rows: 75vh auto auto;
 }
 
 #wrapper > header {
@@ -77,7 +94,7 @@ hr {
 /*-----------------------------*/
 
 main {
-
+    margin-bottom: 100px;
 }
 
 main > section {
@@ -105,18 +122,56 @@ textarea {
     border-bottom: solid 2px var(--soft-green);
 }
 
-.inputbox > label {
-    position: relative;
+.anim > label {
+    position: absolute;
     top: 0%;
     left: 5px;
-    transform: translateY(50%);
+    transform: translateY(100%);
     transition: .3s;
 }
 
-.inputbox > input:focus~label {
+.anim > input:focus~label, input:valid~label {
     top: -50%;
 }
 
 .inputbox > textarea {
+    padding: 0;
     border: solid 2px var(--soft-green);
+}
+
+form > button {
+    border-radius: 10px;
+    padding: 5px 0;
+    background-color: #a2a540;
+    color: #ffffff;
+    border: none;
+    border-bottom: solid 2px var(--mild-creme);
+    font-size: 1.5em;
+    transition: background-color .3s;
+}
+
+form > button:hover {
+    background-color: #7f8226;
+}
+
+footer {
+    background-color: #a7d776;
+}
+
+footer > section {
+    width: 50%;
+    margin: 0 auto;
+}
+
+footer > section p, footer > section a {
+    padding: 5px;
+    background-color: #202020;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.footer-list {
+    width: 80%;
+    padding: 0;
+    margin: 10px;
 }

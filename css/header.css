@@ -4,6 +4,11 @@
     background-color: var(--mild-creme);
 }
 
+.header::after {
+    content: "";
+    text-decoration: wavy underline #ffffff;
+}
+
 .header > div {
     margin-top: 10px;
     width: 100%;
@@ -23,6 +28,10 @@ nav {
     background-color: var(--warm-brown);
     border-radius: 5px;
     padding: 5px;
+
+    /* position: sticky;
+    top: 0px;
+    z-index: -1; */
 }
 
 nav > a {

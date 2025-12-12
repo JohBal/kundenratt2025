@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/aboutus.css">
     <title>Kafé Solglimpt - Om oss</title>
@@ -41,12 +40,12 @@
             <section class="flex-row flex-center">
                 <form class="flex-column flex-center" id="contact" action>
                     <h1>Contact form</h1>
-                    <div class="inputbox">
+                    <div class="inputbox anim">
                         <!--Insert email icon?-->
                         <input name="Email" type="email" required>
                         <label for="contact">Email</label>
                     </div>
-                    <div class="inputbox">
+                    <div class="inputbox anim">
                         <input name="Phone number" type="tel">
                         <label>Phone<span>Optional</span></label>
                     </div>
@@ -59,11 +58,17 @@
             </section>
         </main>
         <footer>
-            <section class="contact">
-
+            <section class="left">
+                <h1>Kontakter</h1>
+                <ul class="footer-list">
+                    <li class="flex-row"><p class="flex-left">E-mail: </p><a class="flex-right" href="mailto:">name@domain</a></li>
+                </ul>
             </section>
-            <section class="open">
-                
+            <section class="right">
+                <h1>Öppetider</h1>
+                <ul class="footer-list">
+                    <li class="flex-row"><p class="flex-left">Måndag</p><p class="flex-right">10:00 - 15:00</p></li>
+                </ul>
             </section>
         </footer>
     </div>

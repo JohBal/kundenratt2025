@@ -46,6 +46,11 @@
 
 /*-----------------------------*/
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
 }
@@ -74,6 +79,10 @@ hr {
     color: var(--warm-brown);
 }
 
+h1 {
+    margin: 5px 0;
+}
+
 /*-----------------------------*/
 
 .menu {
@@ -87,7 +96,9 @@ hr {
     padding: 20px;
     background-color: var(--warm-brown);
     gap: 20px;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    box-shadow: 5px 5px 1px 0px #49392989;
+    border-radius: 5px;
 }
 
 @keyframes item-background {
@@ -103,7 +114,8 @@ hr {
     flex-basis: 20%;
     max-height: 100%;
     border-radius: 5px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, color-mix(in srgb, var(--warm-brown) 100%, #816447 50%) 50%, rgba(255, 255, 255, 0) 100%);
+    /*color-mix(in srgb, var(--warm-brown) 100%, #816447 50%)*/
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%);
     border-top: solid #816447 2px;
     transition: border-top .2s;
 }
@@ -125,4 +137,11 @@ hr {
 .item > img {
     border-radius: 5px;
     margin: 5px;
+}
+
+.title-frame {
+    margin: 10px;
+    width: 100%;
+    height: max-content;
+    text-align: center;
 }
