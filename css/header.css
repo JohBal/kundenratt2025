@@ -1,0 +1,64 @@
+.header {
+    grid-column: 1 / -1;
+    height: 100%;
+    background-color: var(--mild-creme);
+}
+
+.header > div {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+nav {
+    grid-column: 1 / -1;
+    grid-row: 2 / span 1;
+    width: 20%;
+    height: 15%;
+    align-self: start;
+    justify-self: center;
+    justify-content: space-between;
+
+    background-color: var(--warm-brown);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+nav > a {
+    margin: 10px;
+    height: 50%;
+    width: 50%;
+    flex-basis: 50%;
+    align-self: center;
+    justify-content: center;
+    transition: height .2s;
+}
+
+nav > a:hover {
+    height: 80%;
+}
+
+nav > a > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.arc {
+    grid-row: 2 / span 2;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url('../img/arcCreme.png');
+    background-size: 100% 100%;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    touch-action: none;
+    /* filter: hue-rotate(29deg) saturate(.1) brightness(1.5); */
+}
+
+.arc > img {
+    width: 100%;
+}
