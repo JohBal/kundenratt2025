@@ -9,6 +9,10 @@
     text-decoration: wavy underline #ffffff;
 }
 
+.header h1, .header h2 {
+    margin: 10px;
+}
+
 .header > div {
     margin-top: 10px;
     width: 100%;

@@ -42,16 +42,16 @@
                     <h1>Contact form</h1>
                     <div class="inputbox anim">
                         <!--Insert email icon?-->
-                        <input name="Email" type="email" required>
+                        <input id="email" title="Email" type="email" autocomplete="email" required>
                         <label for="contact">Email</label>
                     </div>
                     <div class="inputbox anim">
-                        <input name="Phone number" type="tel">
+                        <input title="Phone number" type="tel">
                         <label>Phone<span>Optional</span></label>
                     </div>
                     <div class="inputbox">
                         <label for="contact">Message</label>
-                        <textarea name="Message" type="text" rows="5" cols="20" wrap="soft" spellcheck="true" required></textarea>
+                        <textarea title="Message" type="text" rows="5" cols="20" wrap="soft" spellcheck="true" required></textarea>
                     </div>
                     <button form="contact" for>Send</button>
                 </form>

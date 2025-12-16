@@ -130,7 +130,7 @@ textarea {
     transition: .3s;
 }
 
-.anim > input:focus~label, input:valid~label {
+.anim > input:focus~label {
     top: -50%;
 }
 
@@ -153,6 +153,15 @@ form > button {
 form > button:hover {
     background-color: #7f8226;
 }
+
+input:not(:required)+label > span {
+    margin-left: 5px;
+    padding: 2px;
+    background-color: var(--mild-creme);
+    color: #202020;
+    border-radius: 15%;
+}
+
 
 footer {
     background-color: #a7d776;

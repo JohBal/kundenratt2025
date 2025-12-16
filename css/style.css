@@ -6,6 +6,11 @@
     --soft-green: #a5b58d;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
 }
@@ -96,9 +101,10 @@ section > div {
 
 .section-top {
     display: grid;
+    height: 20%;
     min-height: 10%;
     grid-template-columns: repeat(3, minmax(10%, 1fr));
-    grid-template-rows: repeat(3, minmax(10%, 50%));
+    grid-template-rows: repeat(3, auto);
 }
 
 .section-top > * {
@@ -107,10 +113,12 @@ section > div {
 }
 
 .section-top > h1 {
-    grid-column: 2/2;
+    grid-column: 2/span 2;
     grid-row: 3/3;
     align-self: center;
-    text-align: center;
+    text-align: left;
+    margin: 0 10px;
+   
 }
 
 .section-bottom {
@@ -157,6 +165,11 @@ hr {
 
 .right {
     float: right;
+}
+
+.text-emphasise {
+    overflow: hidden;
+   text-overflow: ellipsis;
 }
 
 /*div {
