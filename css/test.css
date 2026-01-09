@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+#overlay-flow {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#overlay-flow > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+#image-1 {
+    background-image: url('../img/Image_created_with_a_mobile_phone.png');
+    width: 100%;
+    height: 100%;
+}
+
+.image-2 {
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+
+.image-2 > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+area {
+    background-color: black;
+}
+
+area:hover {
+    background-color: blue;
+}
+
+span {
+    anchor-name: --marker;
+    display: block;
+    position: relative;
+    top: 44%;
+    left: 46%;
+    width: 100px;
+    height: 100px;
+    /* background-color: aqua; */
+    /* transform: translate(-50%, -50%); */
+    clip-path: circle(50px at 50% 50%);
+    overflow: hidden;
+}
+
+span > * {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.fill {
+    display: none;
+}
+
+span:hover > .fill {
+    display: block;
+}
+
+#foodDisplay {
+    position: absolute;
+    position-anchor: --marker;
+    position-area: top center;
+    position-visibility: always;
+
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#foodDisplay > p {
+    width: fit-content;
+    margin: 0;
+}

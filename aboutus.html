@@ -1,59 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/aboutus.css">
+    <link rel="stylesheet" type="text/css" href="css/features.css">
     <title>Kafé Solglimpt - Om oss</title>
 </head>
 <body>
-    <!--Background images-->
-    <div id="overlay-flow">  
-        <div id="image-1"></div>
-        <div class="gradient"></div>
-        <div></div>
-        <div></div>
-    </div>
-
     <div id="wrapper">
         <header>
             <nav class="flex-row">
-                <a class="flex-row" href="./"><img src="./img/shop.svg"></a>
+                <a class="flex-row" href="./index.html"><img alt="Startsida" src="./img/shop.svg"></a>
                 <span class="ver-div"></span>
-                <a class="flex-row" href="./menu.html"><img src="./img/shop.svg"></a>
+                <a class="flex-row" href="./menu.html"><img alt="Menu" src="./img/shop.svg"></a>
             </nav>
             <div class="arc">
                 <!-- <img src="img/arcCreme.png" width="100vw"> -->
             </div>
+            <div class="arc-center">
+                    <h2>Välkommen</h2>
+                 </div>
             <div class="header">
-                <div class="flex-row">
+                <div class="header-top">
                     <!--Logo-->
-                    <img width="50px" height="50px">
-                    <h1>Title</h1>
-                    <h2>Text</h2>
+                    <img src="img/logo.png" alt="Logo av en kaffekopp med solstrålar som strålar ut from koppen" width="100px" height="100px">
+                    <h1>Café solglimpt</h1>
+                    <h2>Direkt från naturen</h2>
                 </div>
             </div>
         </header>
 
-        <main class="card">
+        <main>
+            <div class="card-container">
+                <section class="test card item-right right">
+                    <div class="section-top">
+                        <span class="qtr-circle"></span>
+                        <h1 class="text-emphasise">Hitta oss här</h1>
+                    </div>
+                    <div class="section-bottom flex-column flex-center">
+                        <div>
+                            <iframe class="map" loading="lazy" width="400px" height="400px" src="https://www.openstreetmap.org/export/embed.html?bbox=-79.74220275878908%2C39.17438868649975%2C-79.57500457763673%2C39.25339170052409&amp;layer=mapnik"></iframe>
+                        </div>
+                    </div>
+                    <div class="wave">
+                        <svg width="100%" height="50px" preserveAspectRatio="none" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 L 0,400 C 42.21892235570992,294.1323891134772 84.43784471141984,188.2647782269544 129,160 C 173.56215528858016,131.7352217730456 220.4675435100305,181.07327620565962 257,201 C 293.5324564899695,220.92672379434038 319.6919812484579,211.4421169504071 356,180 C 392.3080187515421,148.5578830495929 438.7645314961377,95.15825599271194 488,91 C 537.2354685038623,86.84174400728806 589.2498927669913,131.92485907874507 621,157 C 652.7501072330087,182.07514092125493 664.2358974358973,187.14230769230767 697,178 C 729.7641025641027,168.85769230769233 783.8065174894191,145.50591015202414 835,151 C 886.1934825105809,156.49408984797586 934.5380326064262,190.83405169959576 969,181 C 1003.4619673935738,171.16594830040424 1024.0413520848756,117.15788304959291 1066,109 C 1107.9586479151244,100.84211695040709 1171.2965590540718,138.53441610203268 1212,150 C 1252.7034409459282,161.46558389796732 1270.7724116988365,146.70445254227636 1305,184 C 1339.2275883011635,221.29554745772364 1389.6137941505817,310.6477737288618 1440,400 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#f6efe8" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
+                    </div>
+                    <div class="half-circle"></div>
+                </section>
+            
+            </div>
             <section class="flex-row flex-center">
                 <form class="flex-column flex-center" id="contact" action>
-                    <h1>Contact form</h1>
+                    <h1>Kontakt formulär</h1>
                     <div class="inputbox anim">
                         <!--Insert email icon?-->
-                        <input id="email" title="Email" type="email" autocomplete="email" required>
-                        <label for="contact">Email</label>
+                        <input id="email" form="contact" for="contact" type="email" autocomplete="email" required>
+                        <label for="email">Email</label>
                     </div>
                     <div class="inputbox anim">
-                        <input title="Phone number" type="tel">
-                        <label>Phone<span>Optional</span></label>
+                        <input id="tel" type="tel">
+                        <label for="tel">Telefon<span>Frivillig</span></label>
                     </div>
                     <div class="inputbox">
-                        <label for="contact">Message</label>
-                        <textarea title="Message" type="text" rows="5" cols="20" wrap="soft" spellcheck="true" required></textarea>
+                        <label for="message">Meddelande</label>
+                        <textarea id="message" type="text" rows="5" cols="40" wrap="soft" spellcheck="true" required></textarea>
                     </div>
-                    <button form="contact" for>Send</button>
+                    <button form="contact" for>Skicka</button>
                 </form>
             </section>
         </main>
@@ -61,16 +76,27 @@
             <section class="left">
                 <h1>Kontakter</h1>
                 <ul class="footer-list">
-                    <li class="flex-row"><p class="flex-left">E-mail: </p><a class="flex-right" href="mailto:">name@domain</a></li>
+                    <li class="flex-row"><p>E-mail: </p><a href="mailto:name@domain">name@domain</a></li>
+                    <li class="flex-row"><p>Telefon: </p><a href="tel:+000000000">123-000-111-222</a></li>
+                    <li class="flex-row"><p>Instagram</p><a href="mailto:">name@domain</a></li>
+                    <li class="flex-row"><p>Facebook</p><a href="mailto:">name@domain</a></li>
                 </ul>
             </section>
             <section class="right">
                 <h1>Öppetider</h1>
                 <ul class="footer-list">
-                    <li class="flex-row"><p class="flex-left">Måndag</p><p class="flex-right">10:00 - 15:00</p></li>
+                    <li class="flex-row"><p>Måndag</p><p>10:00 - 15:00</p></li>
+                    <li class="flex-row"><p>Tisdag</p><p>10:00 - 15:00</p></li>
+                    <li class="flex-row"><p>Onsdag</p><p>10:00 - 15:00</p></li>
+                    <li class="flex-row"><p>Torsdag</p><p>10:00 - 15:00</p></li>
+                    <li class="flex-row"><p>Fredag</p><p >10:00 - 15:00</p></li>
+                    <li class="flex-row"><p>Lördag</p><p >10:00 - 15:00</p></li>
+                    <li class="flex-row"><p>Söndag</p><p >10:00 - 15:00</p></li>
                 </ul>
             </section>
+            <div></div>
         </footer>
     </div>
+    <script src="./js/script.js"></script>
 </body>
 </html>

@@ -1,12 +1,26 @@
-.header {
-    grid-column: 1 / -1;
-    height: 100%;
-    background-color: var(--mild-creme);
+header {
+    /*background-image: url('../img/arc.png');
+    background-position: -50% 100%;
+    background-size: cover;*/
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 4fr 1fr;
+    align-items: center;
+
+    overflow: visible;
 }
 
-.header::after {
-    content: "";
-    text-decoration: wavy underline #ffffff;
+h1 {
+    font-family: 'Lexend';
+}
+
+.header {
+    grid-column: 1 / -1;
+    grid-row: 1 / span 1;
+    height: 100%;
+    z-index: 3;
+
+    background-color: var(--mild-creme);
 }
 
 .header h1, .header h2 {
@@ -14,6 +28,8 @@
 }
 
 .header > div {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
     margin-top: 10px;
     width: 100%;
     height: 100%;
@@ -24,23 +40,44 @@ nav {
     grid-column: 1 / -1;
     grid-row: 2 / span 1;
     width: 20%;
-    height: 15%;
+    height: 22%;
     align-self: start;
     justify-self: center;
     justify-content: space-between;
 
     background-color: var(--warm-brown);
-    border-radius: 5px;
+    /* border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%; */
+    border-radius: 0 0 50% 50%;
     padding: 5px;
+
+    position: static;
+    top: 0px;
+    transform: translate(0, 0px);
+    z-index: 2;
+
+    transition: border-bottom-left-radius .4s, border-bottom-right-radius .4s;
 
     /* position: sticky;
     top: 0px;
     z-index: -1; */
+    /* Reposition nav for smaller screens to enlarge clickable area */
+    @media (width < 600px) {
+        position: relative;
+        grid-row: 1 / span 1;
+        margin-bottom: 10px;
+        width: 90%;
+        height: 25%;
+        z-index: 4;
+        align-self: end;
+
+        border-radius: 100px;
+    }
 }
 
 nav > a {
     margin: 10px;
-    height: 50%;
+    height: 40%;
     width: 50%;
     flex-basis: 50%;
     align-self: center;
@@ -49,7 +86,14 @@ nav > a {
 }
 
 nav > a:hover {
-    height: 80%;
+    height: 50%;
+}
+
+nav:has(a:first-child:hover) {
+    border-bottom-right-radius: 80%;
+}
+nav:has(a:last-child:hover) {
+    border-bottom-left-radius: 80%;
 }
 
 nav > a > img {
@@ -70,8 +114,36 @@ nav > a > img {
     pointer-events: none;
     touch-action: none;
     /* filter: hue-rotate(29deg) saturate(.1) brightness(1.5); */
+    z-index: 3;
 }
 
 .arc > img {
     width: 100%;
+}
+
+.arc-center {
+    grid-row: 2 / span 2;
+    grid-column: 1 / -1;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.arc-center > h2 {
+    width: 50%;
+    height: max-content;
+    font-size: 4em;
+
+    font-family: 'Fredericka the Great';
+}
+
+
+h1, h2 {
+    display: block;
+    text-align: center;
+    z-index: 0;
 }
