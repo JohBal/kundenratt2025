@@ -25,6 +25,7 @@ h1 {
 
 .header h1, .header h2 {
     margin: 10px;
+    text-align: center;
 }
 
 .header > div {
@@ -72,6 +73,7 @@ nav {
         align-self: end;
 
         border-radius: 100px;
+        border: solid 2px #816447;
     }
 }
 
@@ -89,11 +91,13 @@ nav > a:hover {
     height: 50%;
 }
 
-nav:has(a:first-child:hover) {
-    border-bottom-right-radius: 80%;
-}
-nav:has(a:last-child:hover) {
-    border-bottom-left-radius: 80%;
+@media (width >= 600px) {
+    nav:has(a:first-child:hover) {
+        border-bottom-right-radius: 80%;
+    }
+    nav:has(a:last-child:hover) {
+        border-bottom-left-radius: 80%;
+    }
 }
 
 nav > a > img {
@@ -142,8 +146,8 @@ nav > a > img {
 }
 
 
-h1, h2 {
+/* h1, h2 {
     display: block;
     text-align: center;
     z-index: 0;
-}
+} */

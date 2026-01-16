@@ -49,11 +49,28 @@ main > section {
 
 .card-container {
     width: 100%;
-    height: max-content;
+    height: clamp(250px, 100%, 400px);
 }
+
+.card-container:has(.map) {
+    height: max-content;
+} 
 
 .card-container * {
     box-shadow: none;
+}
+
+.card-container:not(:has(.map)) .section-bottom > div {
+    overflow-y: auto;
+}
+
+.employee-list {
+    width: 20%;
+    height: auto;
+}
+
+.employee-list > li > * {
+    margin-bottom: 5px;
 }
 
 .map {
@@ -114,7 +131,7 @@ textarea {
     transition: top .3s;
 }
 
-form .anim > input:focus~label, form .anim > input[value]~label {
+form .anim > input:focus ~ label, form .anim > input[value] ~ label {
     top: -50%;
 }
 
@@ -142,12 +159,13 @@ form > button:hover {
     background-color: #3e5039;
 }
 
-input:not(:required)+label > span {
+input:not(:required) + label::after {
+    content: "Frivillig";
     margin-left: 5px;
     padding: 2px;
     background-color: var(--mild-creme);
     color: #202020;
-    border-radius: 15%;
+    border-radius: 5px;
 }
 
 
