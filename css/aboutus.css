@@ -1,16 +1,8 @@
 :root {
-    --warm-brown: #b58b63;
-    --mild-creme: #f6efe8;
-    --soft-green: #a5b58d;
+    --color-1: #b58b63;
+    --color-2: #f6efe8;
+    --color-3: #a5b58d;
 }
-
-/*-----------------------------*/
-
-.left .arc-inverse {
-    transform: translate(-50%, 0);
-}
-
-/*-----------------------------*/
 
 * {
     margin: 0;
@@ -18,8 +10,7 @@
 }
 
 body {
-    margin: 0;
-    overflow-x: hidden;
+  margin: 0;
 }
 
 #wrapper {
@@ -27,19 +18,18 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 75vh auto auto;
+    grid-template-rows: minmax(75vh, 40%) auto auto auto;
 }
 
 #wrapper > header {
     grid-column: 1 / -1;
-    background-color: var(--soft-green);
+    background-color: var(--color-3);
 }
 
 /*-----------------------------*/
 
 main {
-    margin-bottom: 100px;
-    height: clamp(200px, 100%, 200px);
+    height: max-content;
 }
 
 main > section {
@@ -49,7 +39,7 @@ main > section {
 
 .card-container {
     width: 100%;
-    height: clamp(250px, 100%, 400px);
+    height: clamp(300px, 20vw, 400px);
 }
 
 .card-container:has(.map) {
@@ -71,14 +61,46 @@ main > section {
 
 .employee-list > li > * {
     margin-bottom: 5px;
+
+    text-align: center;
+}
+
+.portrait-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    
+    overflow: hidden;
+    border-radius: 100px;
+    background-color: rgb(55 55 55 / .2);
+}
+
+.portrait-container > img {
+    transform: translate(0, 25%);
+}
+
+.section-bottom > div:has(.map) {
+    height: max-content;
+    width: 100%;
 }
 
 .map {
-    width: 100%;
-    height: min(100%, 250px);
+    position: relative;
+    left: 5%;
+
+    width: 90%;
+    box-sizing: border-box;
+    /* height: min(100%, 250px); */
+    height: auto;
     aspect-ratio: 1 / 1;
-    box-shadow: 0px 0px 1px 5px rgba(from var(--soft-green) r g b / .6);
+    box-shadow: 0px 0px 1px 5px rgb(from var(--color-3) r g b / .6);
     border-radius: 5px;
+}
+
+/*Form*/
+
+.form-container {
+    margin: 50px 0;
 }
 
 form {
@@ -116,7 +138,7 @@ textarea {
     max-width: 100%;
     position: relative;
     margin-bottom: calc(1em);
-    border-bottom: solid 2px var(--soft-green);
+    border-bottom: solid 2px var(--color-3);
 }
 
 .inputbox:has(textarea) {
@@ -136,11 +158,12 @@ form .anim > input:focus ~ label, form .anim > input[value] ~ label {
 }
 
 .inputbox > textarea {
-    padding: 0;
-    border: solid 2px var(--soft-green);
+    box-sizing: border-box;
+    padding: 5px;
+    border: solid 2px var(--color-3);
 }
 
-form > h1 {
+form > h2 {
     margin-bottom: 10px;
 }
 
@@ -150,7 +173,7 @@ form > button {
     background-color: #5D7755;
     color: #ffffff;
     border: none;
-    border-bottom: solid 2px var(--mild-creme);
+    border-bottom: solid 2px var(--color-2);
     font-size: 1.5em;
     transition: background-color .3s;
 }
@@ -160,17 +183,22 @@ form > button:hover {
 }
 
 input:not(:required) + label::after {
+    display: inline;
     content: "Frivillig";
+    width: max-content;
     margin-left: 5px;
     padding: 2px;
-    background-color: var(--mild-creme);
+    background-color: var(--color-2);
     color: #202020;
     border-radius: 5px;
 }
 
+/*-----------------------------*/
+
+/*Footer*/
 
 footer {
-    background-color: #a7d776;
+    background-color: var(--color-3);
 }
 
 footer > section {
@@ -186,6 +214,10 @@ footer > .left {
 
 footer > .right {
     margin-right: 5px;
+}
+
+footer h2 {
+    text-align: center;
 }
 
 footer > section p, footer > section a {
@@ -214,3 +246,9 @@ footer > section p, footer > section a {
     word-wrap: break-word;
     line-break: strict;
 }
+
+footer a:hover {
+    color: #B7D6A9;
+}
+
+/*-----------------------------*/
