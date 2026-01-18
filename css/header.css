@@ -4,13 +4,13 @@ header {
     background-size: cover;*/
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 2fr 4fr 1fr;
     align-items: center;
 
     overflow: visible;
 }
 
-h1 {
+header h1 {
     font-family: 'Lexend';
 }
 
@@ -20,7 +20,7 @@ h1 {
     height: 100%;
     z-index: 3;
 
-    background-color: var(--mild-creme);
+    background-color: var(--color-2);
 }
 
 .header h1, .header h2 {
@@ -42,11 +42,13 @@ nav {
     grid-row: 2 / span 1;
     width: 20%;
     height: 22%;
+    min-height: 70px;
+    max-height: 85px;
     align-self: start;
     justify-self: center;
     justify-content: space-between;
 
-    background-color: var(--warm-brown);
+    background-color: var(--color-1);
     /* border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%; */
     border-radius: 0 0 50% 50%;
@@ -63,7 +65,10 @@ nav {
     top: 0px;
     z-index: -1; */
     /* Reposition nav for smaller screens to enlarge clickable area */
-    @media (width < 600px) {
+}
+
+ @media (width < 600px) {
+    nav {
         position: relative;
         grid-row: 1 / span 1;
         margin-bottom: 10px;
@@ -74,6 +79,11 @@ nav {
 
         border-radius: 100px;
         border: solid 2px #816447;
+
+    }
+
+    header {
+        grid-template-rows: 4fr 4fr 1fr;
     }
 }
 
@@ -102,7 +112,7 @@ nav > a:hover {
 
 nav > a > img {
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
 }
 
 .arc {
@@ -141,8 +151,8 @@ nav > a > img {
     width: 50%;
     height: max-content;
     font-size: 4em;
-
-    font-family: 'Fredericka the Great';
+    text-align: center;
+   
 }
 
 
