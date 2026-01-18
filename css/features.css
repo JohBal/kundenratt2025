@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lexend:wght@100..900&family=Playwrite+FR+Moderne:wght@100..400&display=swap');
 
 hr {
-    border-color: hsl(from var(--warm-brown) h s calc(l * 4) / .2);
+    border-color: hsl(from var(--color-1) h s calc(l * 4) / .2);
 }
 
 a {
