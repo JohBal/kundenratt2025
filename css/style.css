@@ -1,9 +1,9 @@
 /* Denna fil skall innehålla din CSS kod */
 
 :root {
-    --warm-brown: #b58b63;
-    --mild-creme: #f6efe8;
-    --soft-green: #a5b58d;
+    --color-1: #b58b63;
+    --color-2: #f6efe8;
+    --color-3: #a5b58d;
 }
 
 * {
@@ -14,6 +14,7 @@
 body {
     margin: 0;
     position: relative;
+    overflow-x: hidden;
 }
 
 /* Overlay flow */
@@ -116,7 +117,7 @@ body {
 
 #wrapper > section {
     grid-column: 1 / -1;
-    /* background-color: var(--soft-green); */
+    /* background-color: var(--color-3); */
 }
 
 /* Normal flow */
@@ -135,7 +136,6 @@ section > div {
     width: 60%;
     height: 100%;
     max-width: 600px;
-    overflow: hidden;
 }
 
 .card-container {
@@ -144,17 +144,18 @@ section > div {
     height: 90%;
 }
 
-.arc-inverse {
-    display: block;
-    width: 200%;
-    height: 100%;
-    background-image: url('../img/arcInverse.png');
-    background-repeat: no-repeat;
-    background-clip: content-box;
+.background-gradient {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    z-index: -1;
+    width: 125%;
+    height: calc(100% + 40px);
+
+    backdrop-filter: blur(5px);
 }
 
 .qtr-circle {
-    background-color: var(--mild-creme);
+    background-color: var(--color-2);
     border-top-left-radius: 100%;
 }
 
@@ -166,7 +167,7 @@ section > div {
     width: 100%;
     /* top: 51%;
     transform: translateY(-50%); */
-    background-color: var(--mild-creme);
+    background-color: var(--color-2);
     border-radius: 0 0% 84% 0;
 }
 
@@ -192,7 +193,7 @@ section > div {
     align-self: center;
     text-align: left;
     margin: 0 10px;
-    font-size: clamp(.5em, 10vw, 1em);
+    font-size: clamp(.5em, 10vw, 2em);
 }
 
 .section-bottom {
@@ -201,7 +202,7 @@ section > div {
     box-sizing: border-box;
     padding: 10px;
 
-    background-color: var(--mild-creme);
+    background-color: var(--color-2);
     box-shadow: -15px 17px 20px 1px rgba(144, 108, 55, .33);
    /*  border-bottom-left-radius: 4px; */
 }
@@ -214,7 +215,7 @@ section > div {
 .wave {
     grid-area: bot;
 
-    width: calc(100% + 6px);
+    width: calc(100% + 8px);
     left: -2px;
     height: 50px;
     transform: rotate(180deg);
@@ -222,7 +223,7 @@ section > div {
 }
 
 .wave path {
-    fill: var(--mild-creme);
+    fill: var(--color-2);
 }
 
 .text-emphasise {
@@ -232,7 +233,7 @@ section > div {
 
 /* Right & left alignement of items */
 
-.item-left {
+.card-left {
     display: grid;
     grid-template-columns: auto 5%;
     grid-template-rows: 20% calc(80% - 50px) 50px;
@@ -242,12 +243,42 @@ section > div {
     "bot .";
 
     & .qtr-circle {
+        /*Adjust radius so that it applies to the right side*/
         border-top-left-radius: 0;
         border-top-right-radius: 100%;
     }
+
+    & .section-top > h2 {
+        /*Align text to left side of card*/
+        grid-column: 1 / span 2;
+        text-align: right;
+    }
+
+    & .background-gradient {
+        position: relative;
+        left: 0;
+
+        background: radial-gradient(
+            circle at 40% 50%,
+            hsl(from var(--color-1) h calc(s * 1) l / .9) 0%,
+            hsl(from var(--color-1) h s l / .6)  70%,
+            hsl(from var(--color-1) h s l / .2)  80%,
+            hsl(from var(--color-1) h s l / .02)  88%,
+            hsl(from var(--color-1) h s l / 0)  96%,
+            hsl(from var(--color-1) h s l / 0)  100%
+        );
+        border-bottom-right-radius: 1000px;
+        border-top-right-radius: 1000px;
+        /* clip-path: circle(50% at center center); */
+        transform: translate(0, -10px);
+    }
+
+    & .wave {
+        transform: rotate3d(1, 0, 0, 180deg);
+    }
 }
 
-.item-right {
+.card-right {
     display: grid;
     grid-template-columns: 5% auto;
     grid-template-rows: 20% calc(80% - 50px) 50px;
@@ -260,9 +291,35 @@ section > div {
         border-radius: 0 0 0 84%;
     }
     & .wave {
-        left: -4px;
+        left: -6px;
+    }
+
+    & .background-gradient {
+        position: relative;
+        right: 25%;
+
+        background: radial-gradient(
+            circle at 60% 50%,
+            hsl(from var(--color-1) h calc(s * 1) l / .9) 0%,
+            hsl(from var(--color-1) h s l / .6)  70%,
+            hsl(from var(--color-1) h s l / .2)  80%,
+            hsl(from var(--color-1) h s l / .02)  88%,
+            hsl(from var(--color-1) h s l / 0)  96%,
+            hsl(from var(--color-1) h s l / 0)  100%
+        );
+        border-bottom-left-radius: 1000px;
+        border-top-left-radius: 1000px;
+        /* clip-path: circle(50% at center center); */
+        transform: translate(0px, -10px);
     }
 }
+
+.card-container:has(.left ~ .right, .right ~ .left) > .card {
+    width: 40%;
+}
+
+
+
 
 /* .left .qtr-circle {
     border-top-left-radius: 0;
@@ -274,10 +331,6 @@ section > div {
 .right .wave {
     left: -4px;
 } */
-
-.card-container:has(.left ~ .right, .right ~ .left) > .card {
-    width: 40%;
-}
 
 /*div {
     width: 500px;
