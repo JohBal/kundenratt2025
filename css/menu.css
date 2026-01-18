@@ -1,14 +1,12 @@
 :root {
-    --warm-brown: #b58b63;
-    --mild-creme: #f6efe8;
-    --soft-green: #a5b58d;
+    --color-1: #b58b63;
+    --color-2: #f6efe8;
+    --color-3: #a5b58d;
 
     --margin: 5px;
     --padding: 5px;
     --radius: 5px;
 }
-
-/*-----------------------------*/
 
 * {
     margin: 0;
@@ -29,10 +27,10 @@ body {
 
 #wrapper > header {
     grid-column: 1 / -1;
-    background-color: color-mix(in srgb, var(--soft-green) 50%, hsl(88, 17%, 28%) 50%);
+    background-color: color-mix(in srgb, var(--color-3) 50%, hsl(88, 17%, 28%) 50%);
 }
 
-h1 {
+h2, h3 {
     margin: var(--margin) 0;
 }
 
@@ -45,7 +43,7 @@ hr {
 .menu {
     grid-column: 1 / -1;
     grid-row: 2 / span 1;
-    background-color: color-mix(in srgb, var(--soft-green) 50%, hsl(88, 17%, 28%) 50%);
+    background-color: color-mix(in srgb, var(--color-3) 50%, hsl(88, 17%, 28%) 50%);
 }
 
 .group {
@@ -59,7 +57,7 @@ hr {
     justify-content: flex-start;
 
     background-color: rgb(45, 45, 45);
-    border: solid 5px rgba(from var(--soft-green) r g b / .4); /* #49392989;*/
+    border: solid 5px rgb(from var(--color-3) r g b / .4); /* #49392989;*/
     border-radius: var(--radius);
 }
 
@@ -93,7 +91,7 @@ hr {
 
     background-color: hsl(0, 4%, 10%);
     border-radius: var(--radius);
-    box-shadow: hsl(from var(--warm-brown) h s calc(l * 0.8)) inset 0px 0px 2px 2px;
+    box-shadow: hsl(from var(--color-1) h s calc(l * 0.8)) inset 0px 0px 2px 2px;
     transition: box-shadow .2s;
 }
 
@@ -106,10 +104,10 @@ hr {
 }
 
 .title-frame > a:hover {
-    box-shadow: hsl(from var(--warm-brown) h s calc(l * 0.9)) inset 0px 0px 6px 3px;
+    box-shadow: hsl(from var(--color-1) h s calc(l * 0.9)) inset 0px 0px 6px 3px;
 }
 
-.title-frame > h1 {
+.title-frame > h2 {
     grid-column: 4 / span 1;
     grid-row: 1 / span 1;
     width: 100%;
@@ -150,10 +148,6 @@ hr {
 
 
 .card-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
     /* grid-template-columns: repeat(auto-fit, clamp(150px, 30%, 200px)); */
     justify-content: center;
     gap: calc(2 * var(--margin));
@@ -163,22 +157,24 @@ hr {
 
 @keyframes card-background {
     0% {
-        background: linear-gradient(180deg, rgb(from var(--warm-brown) r g b / .3) 0%, rgba(from var(--warm-brown) r g b / 1) 50%, rgba(from var(--warm-brown) r g b / .2) 100%);
+        background: linear-gradient(180deg, rgb(from var(--color-1) r g b / .3) 0%, rgb(from var(--color-1) r g b / 1) 50%, rgb(from var(--color-1) r g b / .2) 100%);
     }
     50% {
-        background: linear-gradient(180deg, rgb(from var(--warm-brown) r g b / .3) 0%, rgba(from var(--warm-brown) r g b / .9) 75%, rgba(from var(--warm-brown) r g b / .15) 100%);
+        background: linear-gradient(180deg, rgb(from var(--color-1) r g b / .3) 0%, rgb(from var(--color-1) r g b / .9) 75%, rgb(from var(--color-1) r g b / .15) 100%);
     }
     100% {
-        background: linear-gradient(180deg, rgb(from var(--warm-brown) r g b / .3) 0%, rgba(from var(--warm-brown) r g b / .8) 50%, rgba(from var(--warm-brown) r g b / .1) 100%);
+        background: linear-gradient(180deg, rgb(from var(--color-1) r g b / .3) 0%, rgb(from var(--color-1) r g b / .8) 50%, rgb(from var(--color-1) r g b / .1) 100%);
     }
 }
 
 .card {
-    width: 200px;
-    height: 300px;
+    box-sizing: content-box;
+    width: clamp(200px, 15vw, 250px);
+    height: auto;
+    aspect-ratio: 1 / 1.5;
     border-radius: var(--radius);
-    /*color-mix(in srgb, var(--warm-brown) 100%, #816447 50%)*/
-    background: linear-gradient(180deg, rgb(from var(--warm-brown) r g b / .3) 0%, rgba(from var(--warm-brown) r g b / 1) 50%, rgba(from var(--warm-brown) r g b / .2) 100%);
+    /*color-mix(in srgb, var(--color-1) 100%, #816447 50%)*/
+    background: linear-gradient(180deg, rgb(from var(--color-1) r g b / .3) 0%, rgb(from var(--color-1) r g b / 1) 50%, rgb(from var(--color-1) r g b / .2) 100%);
     border-top: solid #816447 2px;
     transition: border-top .2s;
     justify-content: flex-start;
@@ -214,7 +210,7 @@ hr {
 
 .card:hover, .card:focus {
     border-top: solid #816447 5px;
-    /* background: linear-gradient(180deg, rgb(from var(--warm-brown) r g b / .3) 0%, rgba(from var(--warm-brown) r g b / .1) 50%, rgba(from var(--warm-brown) r g b / .8) 100%); */
+    /* background: linear-gradient(180deg, rgb(from var(--color-1) r g b / .3) 0%, rgba(from var(--color-1) r g b / .1) 50%, rgba(from var(--color-1) r g b / .8) 100%); */
     animation: card-background .2s linear forwards;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 
@@ -239,7 +235,7 @@ hr {
     }
 }
 
-.card h2 {
+.card h3 {
     text-align: center;
 }
 
@@ -271,45 +267,23 @@ hr {
 
 /* First card design */
 
-.type-list {
-    max-width: 35%;
-    min-width: fit-content;
-}
-
-.card-inner h2 {
-    font-family: 'Playwrite FR Moderne';
-    color: rgb(190, 190, 190);
-    margin: 0;
-}
-
-.card-inner p {
+.card {
     color: rgb(255 255 255 / .7);
     font-family: 'Lexend';
     font-size: .8em;
 }
 
-.card-inner > p:first-of-type {
-    margin-top: var(--margin);
-}
-
-.card-inner > p:last-of-type {
-    margin-bottom: calc(2 * var(--margin));
-}
-
-.price {
-    display: block;
-    width: max-content;
-    padding: var(--padding);
-    text-align: center;
-    background-color: rgb(255 255 255 / .1);
-    border-radius: var(--radius);
+.type-list {
+    max-width: 35%;
+    min-width: fit-content;
 }
 
 .type-list > li {
     width: max-content;
     box-sizing: border-box;
     padding: 3px;
-    background-color: rgba(50 120 140 / .5);
+    background-color: rgba(162, 162, 162, 0.5);
+    box-shadow: rgb(150, 150, 150) 0px 0px 4px;
     border-radius: var(--radius);
     gap: 2px;
     text-align: right;
@@ -345,6 +319,7 @@ hr {
 .card-inner {
     height: 95%;
     margin: var(--margin);
+    gap: var(--margin);
 }
 
 .card-inner > .img-container {
@@ -356,11 +331,41 @@ hr {
     margin: 0 auto;
 }
 
+.card-inner h3 {
+    margin: var(--margin);
+    
+    font-family: 'Playwrite FR Moderne';
+    color: rgb(190, 190, 190);
+    font-size: 2em;
+}
+
+.card-inner p {
+    color: rgb(255 255 255 / .7);
+    font-family: 'Lexend';
+    font-size: .9em;
+}
+
+.card-inner > p:first-of-type {
+    margin-top: var(--margin);
+}
+
+.card-inner > p:last-of-type {
+    margin-bottom: calc(2 * var(--margin));
+}
+
+.price {
+    display: block;
+    width: max-content;
+    padding: var(--padding);
+    text-align: center;
+    background-color: rgb(255 255 255 / .1);
+    border-radius: var(--radius);
+}
+
 .type-list-1 {
     max-width: 35%;
     min-width: fit-content;
     gap: 5px;
-
 }
 
 .type-list-1 > li {
